@@ -21,6 +21,8 @@ The initialization installs the ArgoCD project and application. Currently only o
 ----
 $ oc apply -f argocd/00-argocd-project.yaml
 namespace/bookinfo created
+rolebinding.rbac.authorization.k8s.io/bookinfo-role-binding created
+rolebinding.rbac.authorization.k8s.io/mesh-users created
 appproject.argoproj.io/argocd-team-travel created
 application.argoproj.io/argocd-travel-booking created
 ----
@@ -28,7 +30,7 @@ application.argoproj.io/argocd-travel-booking created
 == Configuration
 
 This repository represents the configuration for an IT-System/Application with all relevant components. Any stage/environment specific adjustments will be made here in this config repo.
-The ArgoCD config also dedicated for this application.
+The ArgoCD config is also dedicated for this application.
 
 == Summary
 

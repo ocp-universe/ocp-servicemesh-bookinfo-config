@@ -69,6 +69,7 @@ spec:
     metadata:
       annotations:
         sidecar.istio.io/inject: "true"
+        sidecar.jaegertracing.io/inject: "true"
       labels:
         app: details
         version: v1
@@ -122,6 +123,7 @@ spec:
     metadata:
       annotations:
         sidecar.istio.io/inject: "true"
+        sidecar.jaegertracing.io/inject: "true"
       labels:
         app: ratings
         version: v1
@@ -175,6 +177,7 @@ spec:
     metadata:
       annotations:
         sidecar.istio.io/inject: "true"
+        sidecar.jaegertracing.io/inject: "true"
       labels:
         app: reviews
         version: v1
@@ -217,6 +220,7 @@ spec:
     metadata:
       annotations:
         sidecar.istio.io/inject: "true"
+        sidecar.jaegertracing.io/inject: "true"
       labels:
         app: reviews
         version: v2
@@ -259,6 +263,7 @@ spec:
     metadata:
       annotations:
         sidecar.istio.io/inject: "true"
+        sidecar.jaegertracing.io/inject: "true"
       labels:
         app: reviews
         version: v3
@@ -325,6 +330,7 @@ spec:
     metadata:
       annotations:
         sidecar.istio.io/inject: "true"
+        sidecar.jaegertracing.io/inject: "true"
       labels:
         app: productpage
         version: v1
