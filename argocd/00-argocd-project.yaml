@@ -7,6 +7,7 @@ metadata:
   labels:
     openshift.io/cluster-monitoring: "true"
 ---
+# RoleBinding to allow any resource creation in this project namespace
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
@@ -20,6 +21,21 @@ subjects:
 - kind: ServiceAccount
   name: argocd-cluster-argocd-application-controller
   namespace: openshift-gitops
+---
+# RoleBinding to allow ServiceMesh registration to the ServiceMeshControl
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  namespace: istio-system
+  name: mesh-users
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: mesh-user
+subjects:
+- kind: ServiceAccount
+  name: argocd-cluster-argocd-application-controller
+  namespace: openshift-gitops  
 ---
 # Logical group for applications
 # the config is very generic
