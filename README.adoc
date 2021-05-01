@@ -14,6 +14,16 @@ toc::[]
 Example for GitOps in OpenShift using ServiceMesh and the reference sample app bookinfo.
 This repository represents the config repository in GitOps principle.
 
+== Initialization
+
+The initialization installs the ArgoCD project and application. Currently only one application representing the bookinfo components.
+
+----
+$ oc apply -f argocd/00-argocd-project.yaml
+namespace/bookinfo created
+appproject.argoproj.io/argocd-team-travel created
+application.argoproj.io/argocd-travel-booking created
+----
 
 == Summary
 

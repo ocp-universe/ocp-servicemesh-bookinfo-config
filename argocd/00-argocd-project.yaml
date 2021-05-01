@@ -1,4 +1,4 @@
-#
+# ArgoCD initialization for the project
 ---
 apiVersion: v1
 kind: Namespace
@@ -6,6 +6,20 @@ metadata:
   name: bookinfo
   labels:
     openshift.io/cluster-monitoring: "true"
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: bookinfo-role-binding
+  namespace: bookinfo
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: admin
+subjects:
+- kind: ServiceAccount
+  name: argocd-cluster-argocd-application-controller
+  namespace: openshift-gitops
 ---
 # Logical group for applications
 # the config is very generic
