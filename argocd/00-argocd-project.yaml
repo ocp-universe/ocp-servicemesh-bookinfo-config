@@ -19,7 +19,7 @@ roleRef:
   name: admin
 subjects:
 - kind: ServiceAccount
-  name: argocd-cluster-argocd-application-controller
+  name: openshift-gitops-argocd-application-controller
   namespace: openshift-gitops
 ---
 # RoleBinding to allow ServiceMesh registration to the ServiceMeshControl
@@ -34,7 +34,7 @@ roleRef:
   name: mesh-user
 subjects:
 - kind: ServiceAccount
-  name: argocd-cluster-argocd-application-controller
+  name: openshift-gitops-argocd-application-controller
   namespace: openshift-gitops  
 ---
 # Logical group for applications
