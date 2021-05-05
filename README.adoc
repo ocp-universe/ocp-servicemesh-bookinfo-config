@@ -27,6 +27,8 @@ appproject.argoproj.io/argocd-team-travel created
 application.argoproj.io/argocd-travel-booking created
 ----
 
+Use the Route of the Ingress Gateway to access the bookinfo demo application.
+
 == Configuration
 
 This repository represents the configuration for an IT-System/Application with all relevant components. Any stage/environment specific adjustments will be made here in this config repo.
