@@ -29,6 +29,14 @@ application.argoproj.io/argocd-travel-booking created
 
 Use the Route of the Ingress Gateway to access the bookinfo demo application.
 
+----
+$ while true; do curl -so /dev/null -w '%{http_code}\n' $(oc get route istio-ingressgateway -n istio-system --template='{{.spec.host}}')/productpage; done;
+200
+200
+200
+----
+
+
 == Configuration
 
 This repository represents the configuration for an IT-System/Application with all relevant components. Any stage/environment specific adjustments will be made here in this config repo.
